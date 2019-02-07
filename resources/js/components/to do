@@ -1,0 +1,10 @@
+View == change status when button pressed to approve
+List == export button
+Add/Edit/transfer == drop down
+transfer == save with id
+assets hav initial department
+initial select on asset type doesnt get saved in request table
+navbar response
+
+------------------Qs------------------
+what are the reasons for asset transfers, requests
