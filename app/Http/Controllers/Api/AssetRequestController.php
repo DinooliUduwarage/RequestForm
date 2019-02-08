@@ -132,4 +132,19 @@ class AssetRequestController extends Controller
         $arequest=AssetRequest::find($id);
         $arequest->delete();
     }
+
+    public function approve(Request $request,$id)
+    {
+        $arequest=AssetRequest::find($id);
+        $arequest->status = $request->arequests_status;
+        $arequest->save();
+    }
+
+    public function reject(Request $request,$id)
+    {
+        $arequest=AssetRequest::find($id);
+        $arequest->status = $request->arequests_status;
+        $arequest->save();
+    }
+
 }

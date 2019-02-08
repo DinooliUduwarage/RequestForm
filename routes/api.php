@@ -38,6 +38,8 @@ Route::post('request/store','Api\AssetRequestController@store');
 Route::delete('request/delete/{id}','Api\AssetRequestController@destroy');
 Route::get('request/edit/{id}','Api\AssetRequestController@edit');
 Route::put('request/update/{id}','Api\AssetRequestController@update');
+Route::put('request/approve/{id}','Api\AssetRequestController@approve');
+Route::put('request/reject/{id}','Api\AssetRequestController@reject');
 
 Route::get('transfers','Api\AssetTransferController@index');
 Route::post('transfer/store','Api\AssetTransferController@store');

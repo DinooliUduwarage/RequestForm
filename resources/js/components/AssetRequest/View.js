@@ -9,10 +9,13 @@ export default class View extends Component {
     constructor(props) {
         super(props);
 
-        
+        this.onApprove = this.onApprove.bind(this);
+        this.onReject = this.onReject.bind(this);
+
         this.state = {
             arequests:[],//initially empty ,set when onsubmit is successfull
-            arequests_status:'0',
+            arequests_status:0,
+            alert_message:''
         }
       
     }
@@ -49,15 +52,34 @@ onDelete(arequest_id){
   }
 
 */
-  onApprove(){
+  onApprove(arequest_id){
     this.setState({ arequests_status: 1 });
     console.log(this.state.arequests_status);
+
+    axios.put('http://127.0.0.1:8000/api/request/approve/'+arequest_id,  {arequests_status:this.state.arequests_status} )
+    
+// then(function (res) {return Console.log(res.data);}); 
+.then(res => {
+this.setState({ alert_message: "success" })
+}).catch(error => {
+this.setState({ alert_message: "error" });
+})
+   
   }
 
   
-  onReject(){
+  onReject(arequest_id){
     this.setState({ arequests_status: 0 });
     console.log(this.state.arequests_status);
+
+    axios.put('http://127.0.0.1:8000/api/request/reject/'+arequest_id,  {arequests_status:this.state.arequests_status} )
+    
+    // then(function (res) {return Console.log(res.data);}); 
+    .then(res => {
+    this.setState({ alert_message: "success" })
+    }).catch(error => {
+    this.setState({ alert_message: "error" });
+    })
   }
 
   
@@ -94,8 +116,8 @@ onDelete(arequest_id){
                                    <td>{arequest.description}</td>
                                    <td>{arequest.status==0?("Not approved yet"):("Approved")}</td>
                                    <td> 
-                                   <MDBBtn  onClick={this.onApprove.bind(this)}  size="sm" outline color="info">Approve</MDBBtn>&nbsp;
-                                   <MDBBtn  onClick={this.onReject.bind(this)}  size="sm" outline color="danger">Reject</MDBBtn>
+                                   <MDBBtn  onClick={this.onApprove.bind(this,arequest.id)}  size="sm" outline color="info">Approve</MDBBtn>&nbsp;
+                                   <MDBBtn  onClick={this.onReject.bind(this,arequest.id)}  size="sm" outline color="danger">Reject</MDBBtn>
                                   
                                   
                                     </td>
