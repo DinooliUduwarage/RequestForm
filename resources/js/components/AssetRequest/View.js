@@ -52,10 +52,8 @@ onDelete(arequest_id){
   }
 
 */
-  onApprove(arequest_id){
-    this.setState({ arequests_status: 1 });
-    console.log(this.state.arequests_status);
-
+  async onApprove(arequest_id){
+  await this.setState({ arequests_status: 1 })
     axios.put('http://127.0.0.1:8000/api/request/approve/'+arequest_id,  {arequests_status:this.state.arequests_status} )
     
 // then(function (res) {return Console.log(res.data);}); 
@@ -68,8 +66,8 @@ this.setState({ alert_message: "error" });
   }
 
   
-  onReject(arequest_id){
-    this.setState({ arequests_status: 0 });
+  async onReject(arequest_id){
+    await this.setState({ arequests_status: 0 });
     console.log(this.state.arequests_status);
 
     axios.put('http://127.0.0.1:8000/api/request/reject/'+arequest_id,  {arequests_status:this.state.arequests_status} )

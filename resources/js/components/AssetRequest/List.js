@@ -14,9 +14,8 @@ export default class List extends Component {
         this.state={
           arequests:[],
         }
-
-    //    const req = this.state.arequests;
       }
+
  
      
 
@@ -26,6 +25,7 @@ export default class List extends Component {
     .then(response=>{
       this.setState({
         arequests:response.data
+        
     });
   });
 }
@@ -149,18 +149,15 @@ onDelete(arequest_id){
 
                     */}
 
-             {/*}   <div className="row text-center" style={{marginTop: '100px'}}>
+              <div className="row text-center" style={{marginTop: '100px'}}>
     <Workbook filename="example.xlsx" element={<button className="btn btn-lg btn-primary">Try me!</button>}>
-      <Workbook.Sheet data={req} name="Sheet A">
-        <Workbook.Column label="Foo" value="{arequest.type}"/>
-        <Workbook.Column label="Bar" value="{arequest.id}"/>
+      <Workbook.Sheet data={this.state.arequests} name="Sheet A">
+        <Workbook.Column label="Foo" value="type"/>
+        <Workbook.Column label="Bar" value="id"/>
       </Workbook.Sheet>
-      <Workbook.Sheet data={data2} name="Another sheet">
-        <Workbook.Column label="Double aaa" value={row => row.aaa * 2}/>
-        <Workbook.Column label="Cubed ccc " value={row => Math.pow(row.ccc, 3)}/>
-                    </Workbook.Sheet>
-    </Workbook>*/}
-  </div>
+     
+    </Workbook>
+  </div></div>
 
 
              /*}   <div className="card bg-light mt-3">

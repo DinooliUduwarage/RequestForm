@@ -78,22 +78,25 @@ class AssetTransferController extends Controller
      */
     public function store(Request $request)
     {
-       
-    
          $y = $request->transfer_toDept;
 
         $t = DB::table('departments')->select('id')->where('name', $y)->get();
- 
+        // return response()->json($t);
+
+
+       // INSERT INTO AssetTransfer (reason,fromDept,toDept,fromUser,toUser,assetType,assetId,comment) VALUES ( $request->transfer_reason, $request->transfer_fromDept, $t, $request->transfer_fromUser, $request->transfer_toUser,$request->transfer_assetType,$request->transfer_assetID,$request->transfer_comment);
+        
         $transfer = new AssetTransfer();
         //fill the user id and department id column
          $transfer->reason = $request->transfer_reason;
          $transfer->fromDept = $request->transfer_fromDept;
-         $transfer->toDept = $t;// $request->transfer_toDept;
+        // $transfer->toDept = $t;// $request->transfer_toDept;
          $transfer->fromUser = $request->transfer_fromUser;
          $transfer->toUser = $request->transfer_toUser;
          $transfer->assetType = $request->transfer_assetType;
          $transfer->assetID= $request->transfer_assetID;
          $transfer->comment= $request->transfer_comment;
+         $transfer->AssetTransfer()->associate($AssetTransfer);
          $transfer->save();
 
         
