@@ -157,19 +157,7 @@ export default class Store extends Component {
                     </div>
 
 
-              {/*}  <div className="form-group">
-                    <label className="control-label col-sm-2" htmlFor="asset">Asset</label>
-                    <div className="col-sm-10">
-                        <select className="form-control" id="asset" type="text" value={this.state.arequest_type} name="asset" onChange={this.onChangeType}>
-                            
-                        <option disabled hidden value=''></option>
-                            <option>Laptop</option>
-                            <option>Printer</option>
-                            <option>Monitor</option>
-                            <option>VGA</option>
-                        </select>
-                    </div>
-        </div>*/}
+             
 
                 <div className="form-group">
                     <label className="control-label col-sm-2" htmlFor="from">From:</label>
@@ -192,9 +180,9 @@ export default class Store extends Component {
                             
                         <option disabled hidden value=''></option>
                             <option>For Extra Usage</option>
-                            <option>For ongoing project</option>
-                            <option>to play</option>
-                            <option>to destroy</option>
+                            <option>For On going Project</option>
+                            <option>For Take Home</option>
+                            <option>For Getting Out</option>
                         </select>
                     </div>
 
