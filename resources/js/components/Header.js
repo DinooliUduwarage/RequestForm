@@ -4,6 +4,7 @@ import Home from './Home';
 import About from './About';
 import AssetRequest from './AssetRequest/Index';
 import AssetTransfer from './AssetTransfer/Index2';
+import Exports from './Export/Exports';
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import 'bootstrap-css-only/css/bootstrap.min.css'; 
@@ -52,6 +53,9 @@ export default class Header extends Component {
             </MDBNavItem>
             <MDBNavItem>
               <MDBNavLink to="/transfers">Transfer</MDBNavLink>
+            </MDBNavItem>
+            <MDBNavItem>
+              <MDBNavLink to="/exports">Exports</MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
               <MDBDropdown>
@@ -110,6 +114,7 @@ export default class Header extends Component {
                 <Route exact path='/about' component={About}/>
                 <Route exact path='/requests' component={AssetRequest}/>
                 <Route exact path='/transfers' component={AssetTransfer}/>
+                <Route exact path='/exports' component={Exports}/>
                 </div>
             </div>
             </Router>

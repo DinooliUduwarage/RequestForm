@@ -44,15 +44,19 @@ Route::put('request/reject/{id}','Api\AssetRequestController@reject');
 Route::get('transfers','Api\AssetTransferController@index');
 Route::post('transfer/store','Api\AssetTransferController@store');
 Route::delete('transfer/delete/{id}','Api\AssetTransferController@destroy');
-
-Route::get('export', 'Api\ExportController@export');
-Route::get('exportView', 'Api\ExportController@exportView');
-Route::get('getFormData', 'Api\AssetRequestController@getFormData');
 Route::get('getDepartmentData', 'Api\AssetTransferController@getDepartmentData');
 Route::get('getUserData', 'Api\AssetTransferController@getUserData');
 Route::get('getAssetID', 'Api\AssetTransferController@getAssetID');
 Route::get('getAssetType', 'Api\AssetTransferController@getAssetType');
-Route::get('show', 'Api\AssetTransferController@shows');
-//Route::post('import', 'MyController@import')->name('import');
 
+Route::get('exports', 'Api\ExportsController@index');
+
+
+
+
+//Route::get('show', 'Api\AssetTransferController@shows');
+//Route::get('export', 'Api\ExportController@export');
+//Route::get('exportView', 'Api\ExportController@exportView');
+//Route::get('getFormData', 'Api\AssetRequestController@getFormData');
+//Route::post('import', 'MyController@import')->name('import');
 //Route::get('request/view','Api\AssetRequestController@index');

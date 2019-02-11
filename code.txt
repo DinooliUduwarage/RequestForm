@@ -350,3 +350,19 @@ class AssetRequestController extends Controller
         $arequest->delete();
     }
 }
+
+
+
+            /*}   <div className="card bg-light mt-3">
+       <div className="card-header">
+           Laravel 5.7 Import Export Excel to database Example - ItSolutionStuff.com
+       </div>
+       <div className="card-body">
+           <form  >
+            
+           <Link to={'/api/export'} >Edit</Link>
+               <button className="btn btn-warning" href="http://127.0.0.1:8000/api/export" >Export User Data</button>
+           </form>
+       </div>
+   </div>
+*/
