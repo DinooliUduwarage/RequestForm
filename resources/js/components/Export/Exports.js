@@ -13,19 +13,19 @@ export default class Export extends Component {
         super(props);
         this.state = {
             assets: [],
-            checkboxes: OPTIONS.reduce(
+         /*   checkboxes: OPTIONS.reduce(
                 (options, option) => ({
                     ...options,
                     [option]: false
                 }),
                 {}
-            )
+            )*/
 
         }
 
 
 
-
+/*
         console.log(this.state.checkboxes);
 
         this.selectAllCheckboxes = this.selectAllCheckboxes.bind(this);
@@ -33,12 +33,12 @@ export default class Export extends Component {
         this.deselectAll = this.deselectAll.bind(this);
         this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
-        this.export = this.export.bind(this);
+        this.export = this.export.bind(this);*/
 
     }
 
 
-    selectAllCheckboxes(isSelected) {
+  /*  selectAllCheckboxes(isSelected) {
         Object.keys(this.state.checkboxes).forEach(checkbox => {
             this.setState(prevState => ({
                 checkboxes: {
@@ -103,7 +103,7 @@ export default class Export extends Component {
 
         </Workbook>);
     }
-
+*/
 
 
 
@@ -123,7 +123,7 @@ export default class Export extends Component {
     render() {
         return (
             <div>
-                <hr />
+          {/*   <hr />
 
                 <div className="container">
                     <div className="row mt-5">
@@ -185,7 +185,10 @@ export default class Export extends Component {
                 </div>
 
 
+*/}
+ 
 
+ {/*just use this code below,, can just import all the fields in the asset table.. above commented code is for selecting necessary fields to export but its not working */}
                 <div className="row text-center" style={{ marginTop: '100px' }}>
                     <Workbook filename="example.xlsx" element={<button className="btn btn-lg btn-primary">Export</button>}>
                         <Workbook.Sheet data={this.state.assets} name="Sheet A">
